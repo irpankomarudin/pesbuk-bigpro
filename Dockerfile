@@ -1,6 +1,9 @@
-from php:7.2-apache
-run docker-php-ext-install pdo pdo_mysql
+FROM php:7.2-apache
 
-workdir /var/www/html
+RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-copy . .
+WORKDIR /var/www/html
+
+COPY . /var/www/html/ 
+
+
